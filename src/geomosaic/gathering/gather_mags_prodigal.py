@@ -12,13 +12,13 @@ def gather_mags_prodigal(all_samples, geomosaic_wdir, output_base_folder, additi
     output_folder = os.path.join(output_base_folder, pckg)
 
     check_call(f"mkdir -p {output_folder}", shell=True)
-    copy_mags(geomosaic_wdir, output_folder, samples)
+    copy_mags(geomosaic_wdir, output_folder, samples, pckg)
 
 
 
-def check_mags(folder, output_folder, sample):
+def check_mags(folder, output_folder, sample, pckg):
 
-    sample_dir = os.path.join(folder, sample)
+    sample_dir = os.path.join(folder, sample, pckg)
     ok_file = os.path.join(sample_dir, "gather_OK.txt")
     mags_tsv = os.path.join(sample_dir, "MAGs.tsv")
     
@@ -48,12 +48,12 @@ def check_mags(folder, output_folder, sample):
     return valid_mags
 
 
-def copy_mags(folder, output_folder, samples):
+def copy_mags(folder, output_folder, samples, pckg):
 
     for s in samples:
 
-        sample_dir = os.path.join(folder, s)
-        mags_list = check_mags(folder, output_folder, s)
+        sample_dir = os.path.join(folder, s, pckg)
+        mags_list = check_mags(folder, output_folder, s, pckg)
 
         for mag_id in mags_list:
 
