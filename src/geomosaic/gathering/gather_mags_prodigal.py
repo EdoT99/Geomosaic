@@ -44,6 +44,8 @@ def check_mags(folder, output_folder, sample, pckg):
                 continue
 
             valid_mags.append(mag_id)
+    else:
+        valid_mags = mags_list
 
     return valid_mags
 

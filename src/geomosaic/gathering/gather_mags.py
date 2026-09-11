@@ -31,7 +31,6 @@ def check_mags(folder, output_folder, sample):
 
     valid_mags = []
 
-
     for mag_id in mags_list:
             src_path = os.path.join(sample_dir, "mags", "fasta", f"{mag_id}.fa")
 
