@@ -474,6 +474,8 @@
         "kofam_scan",
         "kofam_scan_redox_metal_plasticity_index",
         
+        "mags",
+        "mags_prodigal",
         "mags_gtdbtk",
         "mags_recognizer",
         "mags_dram",
