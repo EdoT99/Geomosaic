@@ -19,12 +19,10 @@ def gather_mags(all_samples, geomosaic_wdir, output_base_folder, additional_info
 def check_mags(folder, output_folder, sample):
 
     sample_dir = os.path.join(folder, sample)
-    ok_file = os.path.join(sample_dir, "mags", "gather_OK.txt")
     mags_tsv = os.path.join(sample_dir, "mags", "MAGs.tsv")
     
     if not os.path.exists(mags_tsv):
         print(f"Sample {sample}: MAGs.tsv not found, skipping.")
-
         return []
         
 
@@ -33,10 +31,8 @@ def check_mags(folder, output_folder, sample):
 
     valid_mags = []
 
-    if not os.path.exists(ok_file):
-        print(f"Sample {sample}: gather_OK.txt not found, check possible missing mags on missing_mags_{sample}.log")
 
-        for mag_id in mags_list:
+    for mag_id in mags_list:
             src_path = os.path.join(sample_dir, "mags", "fasta", f"{mag_id}.fa")
 
             if not os.path.isfile(src_path):
