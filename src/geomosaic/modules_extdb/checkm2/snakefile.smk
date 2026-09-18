@@ -1,3 +1,4 @@
+
 rule checkm2_db:
     output:
         db_folder=directory(expand("{checkm2_extdb_folder}", checkm2_extdb_folder=config["EXT_DB"]["checkm2"])),
