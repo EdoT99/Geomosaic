@@ -14,6 +14,7 @@ rule run_checkm2:
         extension="fa",
     shell:
         """
+        ulimit -u 10000
         echo "CHECKM2_PREDICT"
         checkm2 predict \
             --threads {threads} \
