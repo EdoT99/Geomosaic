@@ -10,7 +10,7 @@ checkpoint run_mags:
     params:
         completness_threshold=config["ADDITIONAL_PARAM"]["completness_threshold"],
         contamination_threshold=config["ADDITIONAL_PARAM"]["contamination_threshold"],
-        qa_tool = config["MODULES"]["binning_qa"]
+        qa_tool = config["MODULES"]["binning_qa"],
         user_params=( lambda x: " ".join(filter(None , yaml.safe_load(open(x, "r"))["mags"])) ) (config["USER_PARAMS"]["mags"]) 
     run:
         shell("mkdir -p {output.folder}/fasta")
